@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradeNstocko - Premium Trading Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .montserrat {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    input[type="tel"],
+    input[type="email"] {
+      font-size: 16px;
+    }
+
+    .feature-card {
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .logo-container {
+      filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+      transition: all 0.3s ease;
+    }
+
+    .logo-container:hover {
+      filter: drop-shadow(0 8px 20px rgba(59, 130, 246, 0.5));
+      transform: scale(1.05);
+    }
+
+    .app-name {
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 50%, #c7d2fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0f172a]">
+  <div class="min-h-screen flex flex-col lg:flex-row font-sans bg-[#0f172a]">
+    <!-- Left Side - Desktop Only -->
+    <div class="hidden lg:flex w-1/2 flex-col justify-start items-center bg-[#0f172a]">
+      <div class="flex-1 flex flex-col justify-center items-center w-full">
+        <!-- Logo -->
+        <div class="mb-16 flex flex-col justify-center items-center gap-4">
+          <div class="logo-container">
+            <img src="logo_1024.png" alt="TradeNstocko Logo" class="h-16 w-auto object-contain">
+          </div>
+          <h1 class="app-name text-3xl font-bold tracking-tight montserrat">
+            TradeNstocko
+          </h1>
+          <p class="text-slate-300 text-sm font-light">Premium Trading Platform</p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-2 gap-6 mb-12 w-full px-8 max-w-2xl">
+          <!-- Zero Brokerage -->
+          <div class="rounded-lg flex items-start gap-2 transition-all border overflow-hidden w-full feature-card"
+            style="border: 1px solid rgb(59, 130, 246);">
+            <div class="flex-shrink-0 w-16 h-16 rounded-md flex items-center justify-center"
+              style="background-color: rgb(59, 130, 246);">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0 flex flex-col justify-center items-start h-full">
+              <h3 class="text-base font-semibold" style="color: rgb(59, 130, 246);">Zero</h3>
+              <p class="text-xs text-white font-medium leading-tight">Brokerage Fee</p>
+            </div>
+          </div>
+
+          <!-- Advanced Options -->
+          <div class="rounded-lg flex items-start gap-2 transition-all border overflow-hidden w-full feature-card"
+            style="border: 1px solid rgb(59, 130, 246);">
+            <div class="flex-shrink-0 w-16 h-16 rounded-md flex items-center justify-center"
+              style="background-color: rgb(59, 130, 246);">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0 flex flex-col justify-center items-start h-full">
+              <h3 class="text-base font-semibold" style="color: rgb(59, 130, 246);">Advanced</h3>
+              <p class="text-xs text-white font-medium leading-tight">Options Chain</p>
+            </div>
+          </div>
+
+          <!-- 500x Margin -->
+          <div class="rounded-lg flex items-start gap-2 transition-all border overflow-hidden w-full feature-card"
+            style="border: 1px solid rgb(59, 130, 246);">
+            <div class="flex-shrink-0 w-16 h-16 rounded-md flex items-center justify-center"
+              style="background-color: rgb(59, 130, 246);">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0 flex flex-col justify-center items-start h-full">
+              <h3 class="text-base font-semibold" style="color: rgb(59, 130, 246);">500x Margin</h3>
+              <p class="text-xs text-white font-medium leading-tight">Leverage</p>
+            </div>
+          </div>
+
+          <!-- All Markets -->
+          <div class="rounded-lg flex items-start gap-2 transition-all border overflow-hidden w-full feature-card"
+            style="border: 1px solid rgb(59, 130, 246);">
+            <div class="flex-shrink-0 w-16 h-16 rounded-md flex items-center justify-center"
+              style="background-color: rgb(59, 130, 246);">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0 flex flex-col justify-center items-start h-full">
+              <h3 class="text-base font-semibold" style="color: rgb(59, 130, 246);">All Markets</h3>
+              <p class="text-xs text-white font-medium leading-tight">
+                NSE, MCX, <br> COMEX, U.S. STOCKS & FOREX
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial Section -->
+      <div class="bg-white/90 py-3 px-8 w-full">
+        <div class="flex items-center justify-center gap-3">
+          <span class="text-xl font-extrabold italic leading-none tracking-normal montserrat"
+            style="color: rgb(15, 23, 42);">
+            All Trading in one place
+          </span>
+          <span class="text-2xl font-light italic text-gray-900">×</span>
+          <div class="flex items-center gap-2">
+            <img src="logo_1024.png" alt="TradeNstocko Logo" class="h-8 w-auto object-contain">
+            <span class="text-lg font-bold montserrat" style="color: rgb(15, 23, 42);">TradeNstocko</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="relative w-full mx-auto max-w-2xl">
+        <div class="relative overflow-hidden py-12">
+          <div class="relative rounded-lg overflow-hidden shadow-2xl">
+            <img src="vector.png" alt="TradeNstocko Platform Preview" class="w-full h-auto object-contain rounded-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Top Section -->
+    <div class="lg:hidden w-full flex flex-col bg-[#0f172a]">
+      <div class="w-full py-6 px-4">
+        <!-- Logo -->
+        <div class="mb-6 flex flex-col justify-center items-center gap-3">
+          <div class="logo-container">
+            <img src="logo_1024.png" alt="TradeNstocko Logo" class="h-14 w-auto object-contain">
+          </div>
+          <h1 class="app-name text-2xl font-bold tracking-tight montserrat">
+            TradeNstocko
+          </h1>
+        </div>
+
+        <!-- Mobile Features Grid -->
+        <div class="grid grid-cols-2 gap-3 mb-4 w-full max-w-md mx-auto">
+          <div class="rounded-lg flex items-start gap-2 transition-all border overflow-hidden w-full"
+            style="border: 1px solid rgb(59, 130, 246);">
+            <div class="flex-shrink-0 w-14 h-14 rounded-md flex items-center justify-center"
+              style="background-color: rgb(59, 130, 246);">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0 flex flex-col justify-center items-start h-full pr-2">
+              <h3 class="text-sm font-semibold" style="color: rgb(59, 130, 246);">Zero</h3>
+              <p class="text-[10px] text-white font-medium leading-tight">Brokerage Fee</p>
+            </div>
+          </div>
+
+          <div class="rounded-lg flex items-start gap-2 transition-all border overflow-hidden w-full"
+            style="border: 1px solid rgb(59, 130, 246);">
+            <div class="flex-shrink-0 w-14 h-14 rounded-md flex items-center justify-center"
+              style="background-color: rgb(59, 130, 246);">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0 flex flex-col justify-center items-start h-full pr-2">
+              <h3 class="text-sm font-semibold" style="color: rgb(59, 130, 246);">Advanced</h3>
+              <p class="text-[10px] text-white font-medium leading-tight">Options Chain</p>
+            </div>
+          </div>
+
+          <div class="rounded-lg flex items-start gap-2 transition-all border overflow-hidden w-full"
+            style="border: 1px solid rgb(59, 130, 246);">
+            <div class="flex-shrink-0 w-14 h-14 rounded-md flex items-center justify-center"
+              style="background-color: rgb(59, 130, 246);">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0 flex flex-col justify-center items-start h-full pr-2">
+              <h3 class="text-sm font-semibold" style="color: rgb(59, 130, 246);">500x Margin</h3>
+              <p class="text-[10px] text-white font-medium leading-tight">Leverage</p>
+            </div>
+          </div>
+
+          <div class="rounded-lg flex items-start gap-2 transition-all border overflow-hidden w-full"
+            style="border: 1px solid rgb(59, 130, 246);">
+            <div class="flex-shrink-0 w-14 h-14 rounded-md flex items-center justify-center"
+              style="background-color: rgb(59, 130, 246);">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div class="flex-1 min-w-0 flex flex-col justify-center items-start h-full pr-2">
+              <h3 class="text-sm font-semibold" style="color: rgb(59, 130, 246);">All Markets</h3>
+              <p class="text-[10px] text-white font-medium leading-tight">
+                NSE, MCX, <br> COMEX, U.S. STOCKS & FOREX
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side - Form -->
+    <div
+      class="w-full lg:w-1/2 flex lg:items-center justify-center min-h-screen bg-white px-6 py-8 lg:py-0 lg:rounded-none rounded-t-3xl">
+      <div class="w-full max-w-lg">
+        <!-- Header -->
+        <div class="mb-8 lg:mb-12">
+          <h1
+            class="text-3xl lg:text-5xl lg:font-bold font-medium text-gray-900 lg:text-start text-center mb-3 lg:mb-4">
+            Create Account
+          </h1>
+          <p class="text-gray-600 text-sm lg:text-base lg:text-start lg:font-normal font-light text-center">
+            We'll send a verification code to your mobile number.
+          </p>
+        </div>
+
+        <!-- Form Fields -->
+        <div class="space-y-3 lg:space-y-4 mb-4 lg:mb-6">
+          <!-- Mobile Number -->
+          <div>
+            <div class="relative">
+              <span
+                class="absolute left-3 lg:left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-sm lg:text-base">+91</span>
+              <input type="tel" id="mobileInput" maxlength="10" placeholder="Enter Your Mobile Number"
+                class="w-full border rounded-lg pl-12 lg:pl-14 pr-3 lg:pr-4 py-3 lg:py-4 text-sm lg:text-base outline-none transition-colors border-gray-300 focus:border-gray-400"
+                style="font-size: 16px;" />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <input type="email" id="emailInput" placeholder="Enter Your Email"
+              class="w-full border rounded-lg px-3 lg:px-4 py-3 lg:py-4 text-sm lg:text-base outline-none transition-colors border-gray-300 focus:border-gray-400"
+              style="font-size: 16px;" />
+          </div>
+        </div>
+
+        <!-- Terms Checkbox -->
+        <div class="flex items-start gap-3 py-2 mb-4">
+          <input type="checkbox" id="termsCheckbox" name="agree" class="mt-1 w-4 h-4 accent-blue-600 cursor-pointer"
+            checked />
+          <label for="termsCheckbox" class="text-sm text-gray-400 cursor-pointer">
+            By clicking Signup, you agree to our
+            <a href="#" class="text-blue-600 font-semibold hover:underline">Terms of Service</a>
+            and that you have read our
+            <a href="#" class="text-blue-600 font-semibold hover:underline">Privacy Policy</a>.
+            I hereby authorize to send notifications on SMS/ RCS Messages / Promotional/ Informational messages.
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button id="submitBtn"
+          class="w-full text-white font-semibold py-3 lg:py-4 rounded-lg transition-all text-sm lg:text-base mb-4 lg:mb-6"
+          style="background-color: rgb(59, 130, 246);" disabled>
+          Get OTP
+        </button>
+
+        <!-- OTP Verification Section -->
+        <div id="otpSection" class="hidden bg-white border border-gray-200 rounded-xl shadow-md p-5 mb-4 lg:mb-6">
+          <h3 class="text-blue-600 font-semibold text-center mb-3 text-base lg:text-lg">
+            Enter OTP
+          </h3>
+          <div id="otpError" class="text-red-500 text-xs text-center mb-2 hidden"></div>
+          <div class="flex flex-col gap-3">
+            <input
+              type="text"
+              id="otpInput"
+              maxlength="6"
+              placeholder="Enter OTP"
+              class="w-full border border-gray-300 rounded-md p-2.5 lg:p-3 text-sm lg:text-base focus:ring-2 focus:ring-blue-400 outline-none"
+            />
+            <button
+              id="verifyOtpBtn"
+              class="w-full text-white font-semibold py-2.5 lg:py-3 rounded-md transition-all text-sm lg:text-base"
+              style="background-color: rgb(59, 130, 246);"
+            >
+              Verify OTP
+            </button>
+            <div id="otpSuccess" class="text-indigo-600 font-semibold text-md lg:text-lg text-center mt-1 hidden"></div>
+            <button
+              id="cancelOtpBtn"
+              type="button"
+              class="text-blue-600 text-xs lg:text-sm text-center mt-2 hover:underline"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+
+        <!-- Login Link -->
+        <p class="text-gray-400 text-center text-sm font-light mb-6 lg:mb-8">
+          Already have an account?
+          <a href="#" class="text-blue-600 font-light underline">Log In</a>
+        </p>
+
+        <!-- Trust Badges -->
+        <div class="flex items-center justify-center gap-3 lg:gap-6 text-blue-600 text-xs lg:text-sm mb-6 lg:mb-8">
+          <div class="flex items-center gap-1.5 lg:gap-2">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+              class="w-4 h-4 lg:w-5 lg:h-5">
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                d="M21 12.22C21 6.73 16.74 3 12 3c-4.69 0-9 3.65-9 9.28-.6.34-1 .98-1 1.72v2c0 1.1.9 2 2 2h1v-6.1c0-3.87 3.13-7 7-7s7 3.13 7 7V19h-8v2h8c1.1 0 2-.9 2-2v-1.22c.59-.31 1-.92 1-1.64v-2.3c0-.7-.41-1.31-1-1.62z">
+              </path>
+              <circle cx="9" cy="13" r="1"></circle>
+              <circle cx="15" cy="13" r="1"></circle>
+              <path
+                d="M18 11.03A6.04 6.04 0 0012.05 6c-3.03 0-6.29 2.51-6.03 6.45a8.075 8.075 0 004.86-5.89c1.31 2.63 4 4.44 7.12 4.47z">
+              </path>
+            </svg>
+            <span class="text-[11px] lg:text-sm whitespace-nowrap">24x7 Withdrawal & Support</span>
+          </div>
+          <span class="text-gray-400">•</span>
+          <div class="flex items-center gap-1.5 lg:gap-2">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
+              class="w-4 h-4 lg:w-5 lg:h-5">
+              <path fill="none" stroke-linejoin="round" stroke-width="32"
+                d="M416 221.25V416a48 48 0 01-48 48H144a48 48 0 01-48-48V96a48 48 0 0148-48h98.75a32 32 0 0122.62 9.37l141.26 141.26a32 32 0 019.37 22.62z">
+              </path>
+              <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                d="M256 56v120a32 32 0 0032 32h120"></path>
+            </svg>
+            <span class="text-[11px] lg:text-sm whitespace-nowrap">No Documents & Taxes</span>
+          </div>
+        </div>
+
+        <!-- Mobile Testimonial & Video -->
+        <div class="lg:hidden mt-8">
+          <!-- Mobile Testimonial -->
+          <div class="bg-gray-50 py-3 px-4 rounded-lg mb-6">
+            <div class="flex items-center justify-center gap-2 flex-wrap">
+              <span class="text-base font-extrabold italic leading-none tracking-normal montserrat"
+                style="color: rgb(15, 23, 42);">
+                All Trading in one place
+              </span>
+              <span class="text-xl font-light italic text-gray-900">×</span>
+              <div class="flex items-center gap-2">
+                <img src="logo_1024.png" alt="TradeNstocko Logo" class="h-6 w-auto object-contain">
+                <span class="text-base font-bold montserrat" style="color: rgb(15, 23, 42);">TradeNstocko</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile Image -->
+          <div class="relative w-full mx-auto">
+            <div class="relative rounded-lg overflow-hidden shadow-xl">
+              <img src="vector.png" alt="TradeNstocko Platform Preview" class="w-full h-auto object-contain rounded-lg">
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-gray-500 text-xs lg:text-sm mt-6">
+          <a href="#" class="hover:text-gray-700 transition-colors">Terms & Conditions</a>
+          <span> | </span>
+          <a href="#" class="hover:text-gray-700 transition-colors">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
+    style="display: none;">
+    <div class="relative w-full max-w-5xl mx-4">
+      <button id="closeModal"
+        class="absolute -top-12 right-0 text-white text-3xl hover:text-gray-300 transition-colors font-light w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10">
+        ✕
+      </button>
+      <div
+        class="aspect-video bg-gradient-to-br from-slate-900 to-blue-900 rounded-2xl flex items-center justify-center border border-white/20 shadow-2xl">
+        <div class="text-center">
+          <svg class="w-20 h-20 text-white/40 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <p class="text-white text-lg font-light">Video Player Placeholder</p>
+          <p class="text-white/50 text-sm mt-2 font-light">Replace with your video embed code</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // State management
+    let mobile = '';
+    let email = '';
+    let agreed = true;
+
+    // OTP / backend integration state
+    const AUTH_TOKEN =
+      'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDLTc2OTU0MUI3QjY3QzQ5MSIsImlhdCI6MTc1OTcyNDI0NywiZXhwIjoxOTE3NDA0MjQ3fQ.PuwWxKPkSqhjFXSKPQmXX7kU40BPCXQLqM6PLWNP_p-iq6PdYSEJn--uOyB4vdY2Dr89NrtuMcU-WsI5ih5NoA';
+    const CUSTOMER_ID = 'C-769541B7B67C491';
+    let tempId = null;
+    let verificationId = '';
+
+    // DOM elements
+    const mobileInput = document.getElementById('mobileInput');
+    const emailInput = document.getElementById('emailInput');
+    const termsCheckbox = document.getElementById('termsCheckbox');
+    const submitBtn = document.getElementById('submitBtn');
+    const videoModal = document.getElementById('videoModal');
+    const closeModal = document.getElementById('closeModal');
+    const otpSection = document.getElementById('otpSection');
+    const otpInput = document.getElementById('otpInput');
+    const verifyOtpBtn = document.getElementById('verifyOtpBtn');
+    const cancelOtpBtn = document.getElementById('cancelOtpBtn');
+    const otpError = document.getElementById('otpError');
+    const otpSuccess = document.getElementById('otpSuccess');
+
+    // Validation function
+    function validateForm() {
+      // Email is mandatory and must be valid
+      const hasValidEmail = email && email.includes('@') && email.includes('.');
+      const isFormValid = mobile.length === 10 && hasValidEmail && agreed;
+
+      if (isFormValid) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = '1';
+        submitBtn.style.cursor = 'pointer';
+      } else {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.6';
+        submitBtn.style.cursor = 'not-allowed';
+      }
+    }
+
+    // Backend helpers
+    async function checkPhone(phoneNumber, name) {
+      try {
+        const response = await fetch('https://tnscrm.twmresearchalert.com/gateway/marketLeadReg.php', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            mode: 'checkPhone',
+            phone: phoneNumber,
+            name: name || 'User',
+          }),
+        });
+
+        if (response.status === 409) {
+          const data = await response.json().catch(() => ({}));
+          alert(data.message || 'This phone number is already registered.');
+          return false;
+        }
+
+        if (!response.ok) {
+          alert('Failed to check phone number. Please try again.');
+          return false;
+        }
+
+        const data = await response.json().catch(() => ({}));
+        if (data && data.status === 'success' && data.tempId) {
+          tempId = data.tempId;
+          return true;
+        }
+
+        alert((data && data.message) || 'Unable to verify phone number.');
+        return false;
+      } catch (err) {
+        console.error('checkPhone error', err);
+        alert('Error checking phone number. Please try again.');
+        return false;
+      }
+    }
+
+    async function sendOTP(phoneNumber) {
+      try {
+        const url = new URL('https://cpaas.messagecentral.com/verification/v3/send');
+        url.search = new URLSearchParams({
+          countryCode: '91',
+          flowType: 'SMS',
+          mobileNumber: phoneNumber,
+          customerId: CUSTOMER_ID,
+        }).toString();
+
+        const response = await fetch(url.toString(), {
+          method: 'POST',
+          headers: {
+            authToken: AUTH_TOKEN,
+          },
+        });
+
+        if (!response.ok) {
+          alert('Failed to send OTP. Please try again.');
+          return false;
+        }
+
+        const data = await response.json().catch(() => ({}));
+        const id = data && data.data && data.data.verificationId;
+        if (id) {
+          verificationId = id;
+          // Show OTP section
+          otpSection.classList.remove('hidden');
+          otpInput.value = '';
+          otpError.classList.add('hidden');
+          if (otpSuccess) {
+            otpSuccess.textContent = '';
+            otpSuccess.classList.add('hidden');
+          }
+          otpInput.focus();
+          return true;
+        }
+
+        alert('Failed to send OTP. Please try again.');
+        return false;
+      } catch (err) {
+        console.error('sendOTP error', err);
+        alert('Failed to send OTP. Please try again.');
+        return false;
+      }
+    }
+
+    async function validateOTP(phoneNumber, verificationIdValue, code) {
+      try {
+        const url = new URL('https://cpaas.messagecentral.com/verification/v3/validateOtp');
+        url.search = new URLSearchParams({
+          countryCode: '91',
+          mobileNumber: phoneNumber,
+          verificationId: verificationIdValue,
+          customerId: CUSTOMER_ID,
+          code: code,
+        }).toString();
+
+        const otpResponse = await fetch(url.toString(), {
+          method: 'GET',
+          headers: {
+            authToken: AUTH_TOKEN,
+          },
+        });
+
+        if (!otpResponse.ok) {
+          alert('Failed to validate OTP. Please try again.');
+          return false;
+        }
+
+        const otpData = await otpResponse.json().catch(() => ({}));
+        const status = otpData && otpData.data && otpData.data.verificationStatus;
+
+        if (otpData.responseCode === 200 && status === 'VERIFICATION_COMPLETED') {
+          // OTP verified, now submit lead registration
+          try {
+            const submitResponse = await fetch('https://tnscrm.twmresearchalert.com/gateway/marketLeadReg.php', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                mode: 'submit',
+                tempId: tempId,
+                email: email
+              }),
+            });
+
+            if (!submitResponse.ok) {
+              const submitData = await submitResponse.json().catch(() => ({}));
+              const errorMsg = (submitData && submitData.message) ||
+                'Failed to complete registration. Please try again.';
+              otpError.textContent = errorMsg;
+              otpError.classList.remove('hidden');
+              if (otpSuccess) {
+                otpSuccess.textContent = '';
+                otpSuccess.classList.add('hidden');
+              }
+              return false;
+            }
+
+            // Show success text below Verify OTP button
+            if (otpSuccess) {
+              otpSuccess.textContent =
+                'Successfully registered! Our team will reach out to you shortly to help you get started.';
+              otpSuccess.classList.remove('hidden');
+            }
+            return true;
+          } catch (regErr) {
+            console.error('submit registration error', regErr);
+            otpError.textContent = 'Failed to complete registration. Please try again.';
+            otpError.classList.remove('hidden');
+            return false;
+          }
+        }
+
+        otpError.textContent = 'Invalid OTP. Please try again.';
+        otpError.classList.remove('hidden');
+        return false;
+      } catch (err) {
+        console.error('validateOTP error', err);
+        alert('Failed to validate OTP. Please try again.');
+        return false;
+      }
+    }
+
+    // Mobile input handler
+    mobileInput.addEventListener('input', (e) => {
+      mobile = e.target.value.replace(/\D/g, '');
+      e.target.value = mobile;
+      validateForm();
+    });
+
+    // Email input handler
+    emailInput.addEventListener('input', (e) => {
+      email = e.target.value;
+      validateForm();
+    });
+
+    // Terms checkbox handler
+    termsCheckbox.addEventListener('change', (e) => {
+      agreed = e.target.checked;
+      validateForm();
+    });
+
+    // Submit button handler
+    submitBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+
+      const hasValidEmail = email && email.includes('@') && email.includes('.');
+      if (!(mobile.length === 10 && hasValidEmail && agreed)) {
+        alert(
+          'Please enter a valid 10-digit mobile number and valid email, and accept the terms.'
+        );
+        return;
+      }
+
+      submitBtn.innerHTML = 'Sending OTP...';
+      submitBtn.disabled = true;
+      submitBtn.style.cursor = 'not-allowed';
+
+      try {
+        // 1. Check if phone is valid/available in backend
+        const phoneAvailable = await checkPhone(mobile, email || 'User');
+        if (!phoneAvailable) {
+          submitBtn.innerHTML = 'Get OTP';
+          validateForm();
+          return;
+        }
+
+        // 2. Send OTP via MessageCentral
+        const otpSent = await sendOTP(mobile);
+        if (!otpSent) {
+          submitBtn.innerHTML = 'Get OTP';
+          validateForm();
+          return;
+        }
+      } finally {
+        submitBtn.innerHTML = 'Get OTP';
+        validateForm();
+      }
+    });
+
+    // Verify OTP button handler
+    verifyOtpBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const code = otpInput.value.trim().replace(/\D/g, '');
+
+      if (code.length < 4) {
+        otpError.textContent = 'OTP must be at least 4 digits';
+        otpError.classList.remove('hidden');
+        if (otpSuccess) {
+          otpSuccess.textContent = '';
+          otpSuccess.classList.add('hidden');
+        }
+        return;
+      }
+
+      otpError.classList.add('hidden');
+      if (otpSuccess) {
+        otpSuccess.textContent = '';
+        otpSuccess.classList.add('hidden');
+      }
+      verifyOtpBtn.innerHTML = 'Verifying...';
+      verifyOtpBtn.disabled = true;
+      verifyOtpBtn.style.cursor = 'not-allowed';
+
+      try {
+        const success = await validateOTP(mobile, verificationId, code);
+        if (success) {
+          // Reset form on success
+          mobileInput.value = '';
+          emailInput.value = '';
+          mobile = '';
+          email = '';
+          otpInput.value = '';
+          validateForm();
+        }
+      } finally {
+        verifyOtpBtn.innerHTML = 'Verify OTP';
+        verifyOtpBtn.disabled = false;
+        verifyOtpBtn.style.cursor = 'pointer';
+      }
+    });
+
+    // Cancel OTP button handler
+    cancelOtpBtn.addEventListener('click', () => {
+      otpSection.classList.add('hidden');
+      otpInput.value = '';
+      otpError.classList.add('hidden');
+      if (otpSuccess) {
+        otpSuccess.textContent = '';
+        otpSuccess.classList.add('hidden');
+      }
+    });
+
+    // OTP input handler - only allow digits
+    otpInput.addEventListener('input', (e) => {
+      e.target.value = e.target.value.replace(/\D/g, '');
+      if (otpError && !otpError.classList.contains('hidden')) {
+        otpError.classList.add('hidden');
+      }
+    });
+
+    // Video modal handlers
+    function showVideo() {
+      videoModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function hideVideo() {
+      videoModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    if (closeModal) {
+      closeModal.addEventListener('click', hideVideo);
+    }
+
+    // Close modal when clicking outside
+    if (videoModal) {
+      videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+          hideVideo();
+        }
+      });
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && videoModal && videoModal.style.display === 'flex') {
+        hideVideo();
+      }
+    });
+
+    // Initialize form validation
+    validateForm();
+  </script>
+</body>
+
+</html>
