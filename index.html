@@ -296,7 +296,7 @@
         <button id="submitBtn"
           class="w-full text-white font-semibold py-3 lg:py-4 rounded-lg transition-all text-sm lg:text-base mb-4 lg:mb-6"
           style="background-color: rgb(59, 130, 246);" disabled>
-          Get OTP
+          Submit
         </button>
 
         <!-- OTP Verification Section -->
@@ -677,7 +677,7 @@
         // 1. Check if phone is valid/available in backend
         const phoneAvailable = await checkPhone(mobile, name);
         if (!phoneAvailable) {
-          submitBtn.innerHTML = 'Get OTP';
+          submitBtn.innerHTML = 'Submit';
           validateForm();
           return;
         }
@@ -685,12 +685,12 @@
         // 2. Send OTP via MessageCentral
         const otpSent = await sendOTP(mobile);
         if (!otpSent) {
-          submitBtn.innerHTML = 'Get OTP';
+          submitBtn.innerHTML = 'Submit';
           validateForm();
           return;
         }
       } finally {
-        submitBtn.innerHTML = 'Get OTP';
+        submitBtn.innerHTML = 'Submit';
         validateForm();
       }
     });
