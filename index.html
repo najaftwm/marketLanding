@@ -22,7 +22,7 @@
     }
 
     input[type="tel"],
-    input[type="email"] {
+    input[type="text"] {
       font-size: 16px;
     }
 
@@ -165,7 +165,7 @@
 
     <!-- Mobile Top Section -->
     <div class="lg:hidden w-full flex flex-col bg-[#0f172a]">
-      <div class="w-full py-6 px-4">
+      <div class="w-full py-3 px-4">
         <!-- Logo -->
         <div class="mb-6 flex flex-col justify-center items-center gap-3">
           <div class="logo-container">
@@ -259,21 +259,22 @@
 
         <!-- Form Fields -->
         <div class="space-y-3 lg:space-y-4 mb-4 lg:mb-6">
-          <!-- Mobile Number -->
+  
+          <!-- Name -->
           <div>
-            <div class="relative">
-              <span
-                class="absolute left-3 lg:left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-sm lg:text-base">+91</span>
-              <input type="tel" id="mobileInput" maxlength="10" placeholder="Enter Your Mobile Number"
-                class="w-full border rounded-lg pl-12 lg:pl-14 pr-3 lg:pr-4 py-3 lg:py-4 text-sm lg:text-base outline-none transition-colors border-gray-300 focus:border-gray-400"
-                style="font-size: 16px;" />
-            </div>
-          </div>
-
-          <!-- Email -->
-          <div>
-            <input type="email" id="emailInput" placeholder="Enter Your Email"
+            <input type="text" id="nameInput" placeholder="Enter Your Name"
               class="w-full border rounded-lg px-3 lg:px-4 py-3 lg:py-4 text-sm lg:text-base outline-none transition-colors border-gray-300 focus:border-gray-400"
+              style="font-size: 16px;" />
+          </div>
+        </div>
+
+        <!-- Mobile Number -->
+        <div>
+          <div class="relative">
+            <span
+              class="absolute left-3 lg:left-4 top-1/2 transform -translate-y-1/2 text-gray-600 text-sm lg:text-base">+91</span>
+            <input type="tel" id="mobileInput" maxlength="10" placeholder="Enter Your Mobile Number"
+              class="w-full border rounded-lg pl-12 lg:pl-14 pr-3 lg:pr-4 py-3 lg:py-4 text-sm lg:text-base outline-none transition-colors border-gray-300 focus:border-gray-400"
               style="font-size: 16px;" />
           </div>
         </div>
@@ -429,7 +430,7 @@
   <script>
     // State management
     let mobile = '';
-    let email = '';
+    let name = '';
     let agreed = true;
 
     // OTP / backend integration state
@@ -441,7 +442,7 @@
 
     // DOM elements
     const mobileInput = document.getElementById('mobileInput');
-    const emailInput = document.getElementById('emailInput');
+    const nameInput = document.getElementById('nameInput');
     const termsCheckbox = document.getElementById('termsCheckbox');
     const submitBtn = document.getElementById('submitBtn');
     const videoModal = document.getElementById('videoModal');
@@ -455,9 +456,9 @@
 
     // Validation function
     function validateForm() {
-      // Email is mandatory and must be valid
-      const hasValidEmail = email && email.includes('@') && email.includes('.');
-      const isFormValid = mobile.length === 10 && hasValidEmail && agreed;
+      // Name is mandatory and must be valid
+      const hasValidName = name && name.length > 0;
+      const isFormValid = mobile.length === 10 && hasValidName && agreed && name.length > 0;
 
       if (isFormValid) {
         submitBtn.disabled = false;
@@ -595,7 +596,7 @@
               body: JSON.stringify({
                 mode: 'submit',
                 tempId: tempId,
-                email: email
+                name: name
               }),
             });
 
@@ -644,9 +645,9 @@
       validateForm();
     });
 
-    // Email input handler
-    emailInput.addEventListener('input', (e) => {
-      email = e.target.value;
+    // Name input handler
+    nameInput.addEventListener('input', (e) => {
+      name = e.target.value;
       validateForm();
     });
 
@@ -660,10 +661,10 @@
     submitBtn.addEventListener('click', async (e) => {
       e.preventDefault();
 
-      const hasValidEmail = email && email.includes('@') && email.includes('.');
-      if (!(mobile.length === 10 && hasValidEmail && agreed)) {
+      const hasValidName = name && name.length > 0;
+      if (!(mobile.length === 10 && hasValidName && agreed && name.length > 0)) {
         alert(
-          'Please enter a valid 10-digit mobile number and valid email, and accept the terms.'
+          'Please enter a valid 10-digit mobile number and valid name, and accept the terms.'
         );
         return;
       }
@@ -674,7 +675,7 @@
 
       try {
         // 1. Check if phone is valid/available in backend
-        const phoneAvailable = await checkPhone(mobile, email || 'User');
+        const phoneAvailable = await checkPhone(mobile, name);
         if (!phoneAvailable) {
           submitBtn.innerHTML = 'Get OTP';
           validateForm();
@@ -723,9 +724,9 @@
         if (success) {
           // Reset form on success
           mobileInput.value = '';
-          emailInput.value = '';
+          nameInput.value = '';
           mobile = '';
-          email = '';
+          name = '';
           otpInput.value = '';
           validateForm();
         }
